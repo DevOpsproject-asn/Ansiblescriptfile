@@ -1,0 +1,21 @@
+# Install Http server and start the server
+---
+- hosts: all
+  gather_facts: no
+  remote_user: ansible
+  become: true
+  tasks:
+   - name: Install Http sever
+     yum: 
+       name: httpd
+       state: latest
+   - name: start the http server
+     service:
+       name: httpd
+       enbled: yes
+       state: started
+   - name: Insert Index Page
+     template:
+      src: index.html
+      dest: /var/www/html/index.html
+       
