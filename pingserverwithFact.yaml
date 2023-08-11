@@ -1,0 +1,10 @@
+# ping server with gather_fact 
+---
+- hosts: all
+  gather_facts: yes
+  remote_user: ansible
+  tasks:
+    name: test connection
+    ping:
+    remote_user: ansible
+
