@@ -5,7 +5,7 @@
   remote_user: ansible
   become : true  # sudo privileges to user
   tasks: 
-    name: install http package 
+  - name: install http package 
     yum: 
       name: httpd
       update_cache: yes
