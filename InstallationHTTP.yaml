@@ -1,0 +1,15 @@
+# Ansible playbook will install the HTTP but not start the HTTP
+---
+- hosts: all
+  gather-facts: no
+  remote_user: ansible
+  become : true  # sudo privileges to user
+  tasks: 
+    name: install http package 
+    yum: 
+      name: httpd
+      update_cache: yes
+      state: latest    # latest http packge will install 
+      
+
+
