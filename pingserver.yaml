@@ -1,0 +1,10 @@
+#ping server with Ansible script
+---
+- host: all  # all server ping as per added on inventory file 
+  gather_fact: no  # it will not collect server information , if True then it will collect server info with json format
+  remote_user: ansible  # remote server user details need to mention 
+  tasks:
+    - name: test connection
+      ping: 
+      remote_user: ansible
+  
